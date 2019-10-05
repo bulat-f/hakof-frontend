@@ -1,18 +1,18 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import React from "react";
+import Head from "next/head";
+import { Card, H1 } from "@hakof/common";
 
 const Home = () => (
   <div>
     <Head>
       <title>Home</title>
-      <link rel='icon' href='/static/favicon.ico' importance='low' />
+      <link rel="icon" href="/static/favicon.ico" importance="low" />
     </Head>
 
-    <div>
-      <h1>Hakof</h1>
-    </div>
+    <Card>
+      <H1>Hakofff</H1>
+    </Card>
   </div>
-)
+);
 
-export default Home
+export default Home;
