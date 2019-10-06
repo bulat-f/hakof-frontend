@@ -1,4 +1,4 @@
-export { theme } from "./constants";
+export { theme as defaultTheme } from "./constants";
 
 export { Card, CardInner } from "./Card";
 // TODO: replace defaults with named exports
