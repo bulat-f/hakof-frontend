@@ -1,5 +1,5 @@
 const withTM = require("next-transpile-modules");
 
 module.exports = withTM({
-  transpileModules: ["@hakof/common"]
+  transpileModules: ["@hakof/api", "@hakof/common"]
 });

@@ -1,6 +1,6 @@
 import { compose, setStatic } from "recompose";
 
-import { getArticles } from "../../data";
+import { getArticles } from "@hakof/api";
 
 import { HomeView } from "./HomeView";
 
