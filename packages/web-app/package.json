@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@hakof/common": "0.1.0",
+    "express": "^4.17.1",
     "next": "9.0.7",
+    "next-routes": "^1.4.2",
     "next-transpile-modules": "^2.3.1",
     "react": "16.10.2",
     "react-dom": "16.10.2",
+    "recompose": "^0.30.0",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {

@@ -1,1 +1,5 @@
-export const HOME = "home";
+const HOME = "home";
+
+module.exports = {
+  HOME
+};
