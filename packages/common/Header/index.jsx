@@ -1,34 +1,36 @@
-import * as React from 'react';
-import { Grid } from '../Grid';
-import * as Styles from './styles';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import { Grid } from "../Grid";
+import * as Styles from "./styles";
 
-class Header extends React.PureComponent {
+class Header extends PureComponent {
   state = { showMenu: false };
 
   toggleMenu = () => {
     const { showMenu } = this.state;
     this.setState({ showMenu: !showMenu });
-  }
+  };
 
   render() {
-    const { showMenu } = this.state;
+    // const { showMenu } = this.state;
+    const { logo: Logo, children } = this.props;
 
     return (
       <Styles.Wrapper>
         <Grid>
           <Styles.Container>
-            <Styles.Logo to="/" />
-            <Styles.Menu show={showMenu}>
-              <Styles.MenuItem>Articles</Styles.MenuItem>
-              <Styles.MenuItem>Novels</Styles.MenuItem>
-            </Styles.Menu>
-            <Styles.Login to="/login">Login</Styles.Login>
-            <Styles.MenuIcon onClick={this.toggleMenu} />
+            <Logo />
+            {children}
           </Styles.Container>
         </Grid>
       </Styles.Wrapper>
     );
   }
 }
+
+Header.propTypes = {
+  logo: PropTypes.element.isRequired,
+  children: PropTypes.element.isRequired
+};
 
 export default Header;

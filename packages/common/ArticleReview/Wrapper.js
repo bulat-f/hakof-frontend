@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Card } from "../Card/index";
+import { Card } from "../Card";
 
 export const Wrapper = styled(Card)`
   display: flex;
@@ -8,20 +8,19 @@ export const Wrapper = styled(Card)`
   min-width: 20rem;
   box-shadow: 0 0 6px 3px #eee;
   flex-direction: ${props => (props.selected ? "column" : "row")};
+  ${props =>
+    props.selected
+      ? css`
+          margin: 0;
+        `
+      : css``};
 
   &:hover {
     box-shadow: 0 0 10px 5px #eee;
   }
 
-  ${props =>
-    props.selected
-      ? css`
-          margin: 0.5rem !important;
-        `
-      : css``}
-
   @media screen and (max-width: ${({ theme }) =>
-    `${theme.mediaSizes.smMin}px`}) {
+      `${theme.mediaSizes.smMin}px`}) {
     flex-direction: column;
   }
 `;

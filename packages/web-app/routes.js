@@ -1,8 +1,8 @@
-const routes = require("next-routes")();
+const routes = require("next-routes");
 const PAGES = require("./constants/pages");
 
-const localePattern = ":locale([a-z]{2})";
+const languagePattern = ":lang";
 
-module.exports = routes
-  .add(PAGES.HOME, "/", "home")
-  .add(`/${localePattern}`, "home");
+module.exports = routes()
+  .add("/", "home")
+  .add(PAGES.HOME, `/${languagePattern}`, "home");

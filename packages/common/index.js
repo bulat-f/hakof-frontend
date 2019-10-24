@@ -1,9 +1,10 @@
 export { theme as defaultTheme } from "./constants";
 
-export { Card, CardInner } from "./Card";
 // TODO: replace defaults with named exports
 export { default as Article } from "./Article";
 export { default as ArticleReview } from "./ArticleReview";
+export { ArticleReviewWrapper } from "./ArticleReviewWrapper";
+export { Card, CardInner } from "./Card";
 export { default as FeaturedArticleReview } from "./FeaturedArticleReview";
 export { default as Footer } from "./Footer";
 export { Grid, Row, Col } from "./Grid";

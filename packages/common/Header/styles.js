@@ -13,22 +13,6 @@ export const Container = styled.div`
   height: 4.5rem;
 `;
 
-export const Logo = styled.a`
-  position: relative;
-  display: inline-block;
-  font-family: "Roboto Slab", serif;
-  font-weight: 700;
-  color: #006;
-  text-decoration: none;
-  font-size: 2rem;
-  z-index: 200;
-
-  &:after {
-    content: "Hakof";
-    z-index: 10;
-  }
-`;
-
 export const MenuIcon = styled.div`
   display: none;
   height: 2rem;

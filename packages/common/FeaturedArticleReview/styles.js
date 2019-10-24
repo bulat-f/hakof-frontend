@@ -13,6 +13,11 @@ export const Wrapper = styled(Card)`
 
   color: #fff;
 
+  @media screen and (max-width: ${({ theme }) =>
+      `${theme.mediaSizes.smMin}px`}) {
+    margin: 1rem 0;
+  }
+
   &:hover {
     box-shadow: 0 0 10px 5px #eee;
   }

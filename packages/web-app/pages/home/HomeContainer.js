@@ -4,11 +4,13 @@ import { getArticles } from "@hakof/api";
 
 import { HomeView } from "./HomeView";
 
-const getInitialProps = async () => {
-  const articles = await getArticles();
-  return { articles };
+import { RU } from '../../constants/languages';
+
+const getInitialProps = async ({ query }) => {
+  const articles = await getArticles(query.lang || RU);
+  return { ...articles };
 };
 
 export const HomeContainer = compose(
-  setStatic("getInitialProps", getInitialProps)
+  setStatic("getInitialProps", getInitialProps),
 )(HomeView);

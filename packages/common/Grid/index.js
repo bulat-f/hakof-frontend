@@ -20,7 +20,7 @@ export const Grid = styled.div`
   padding-right: ${({ theme }) => `${theme.grid.gutterWidth / 2}px`};
   ${clearfix};
   max-width: ${({ theme }) => `${theme.containerMaxWidth}px`};
-  width: 100%;
+  width: auto;
 
   @media screen and (max-width: ${({ theme }) =>
       `${theme.mediaSizes.xsMax}px`}) {
