@@ -29,20 +29,22 @@ const LangWrapper = styled.a`
   cursor: pointer;
 `;
 
-export const LanguageSwitcherView = ({ pathname, currentLanguage }) => (
-  <Link route={pathname} params={{ lang: currentLanguage === TT ? RU : TT }}>
+const getReverseLang = currentLanguage => (currentLanguage === TT ? RU : TT);
+
+export const LanguageSwitcherView = ({ pathname, params, currentLanguage }) => (
+  <Link
+    route={pathname}
+    params={{ ...params, lang: getReverseLang(currentLanguage) }}
+  >
     <LangWrapper>
       {currentLanguage === RU ? <TatIcon /> : <RusIcon />}
-      {currentLanguage === RU ? (
-        <P>{LANGUAGE_NAMES[TT]}</P>
-      ) : (
-        <P>{LANGUAGE_NAMES[RU]}</P>
-      )}
+      <P>{LANGUAGE_NAMES[getReverseLang(currentLanguage)]}</P>
     </LangWrapper>
   </Link>
 );
 
 LanguageSwitcherView.propyTypes = {
   pathname: PropTypes.string.isRequired,
+  params: PropTypes.object.isRequired,
   currentLanguage: PropTypes.string.isRequired
 };

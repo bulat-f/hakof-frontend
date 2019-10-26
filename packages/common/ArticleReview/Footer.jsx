@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import * as Styles from "./styles";
 
 const Footer = ({ source_href, source_title }) => (

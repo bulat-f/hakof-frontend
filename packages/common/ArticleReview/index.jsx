@@ -7,12 +7,12 @@ import Wrapper from './Wrapper';
 
 class ArticleReview extends React.PureComponent {
   render() {
-    const { id, title, description, cover, selected } = this.props;
+    const { href, title, description, cover, selected } = this.props;
 
     return (
       <Wrapper selected={selected}>
         <Cover src={cover} />
-        <Styles.Link to={`/articles/${id}`} />
+        <Styles.Link href={href} />
         <Styles.Inner>
           <Header />
           <Styles.Content>

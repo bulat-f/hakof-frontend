@@ -29,7 +29,7 @@ class Header extends PureComponent {
 }
 
 Header.propTypes = {
-  logo: PropTypes.element.isRequired,
+  logo: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
   children: PropTypes.element.isRequired
 };
 

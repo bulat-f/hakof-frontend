@@ -9,10 +9,12 @@ export const LanguageSwitcherContainer = () => {
   const router = useRouter();
 
   const pathname = router.pathname.replace("/", "");
+  const params = router.query;
 
   return (
     <LanguageSwitcherView
       pathname={pathname}
+      params={params}
       currentLanguage={currentLanguage}
     />
   );

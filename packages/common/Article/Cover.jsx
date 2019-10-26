@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { CardInner } from '../Card';
 import * as Styles from './styles';
 

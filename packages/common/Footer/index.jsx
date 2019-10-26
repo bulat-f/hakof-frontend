@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Grid } from "../Grid";
 import * as Styles from "./styles";
 

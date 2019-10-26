@@ -10,7 +10,11 @@ import {
   H2
 } from "@hakof/common";
 
+import { Link } from "../../routes";
+
 import { MainLayout } from "../../layouts/MainLayout";
+
+import { ARTICLE } from "../../constants/pages";
 
 const SectionTitle = styled(H2)`
   margin: 1.5rem 0;
@@ -18,22 +22,38 @@ const SectionTitle = styled(H2)`
   text-transform: uppercase;
 `;
 
-const HomeView = ({ featured, latest, selected }) => (
+const HomeView = ({ lang, featured, latest, selected }) => (
   <MainLayout>
     <Head>
       <title>Home</title>
     </Head>
 
     <Grid>
-      <FeaturedArticleReview {...featured} />
+      <Link route={ARTICLE} params={{ lang, slug: featured.slug }} passHref>
+        <FeaturedArticleReview {...featured} />
+      </Link>
       <SectionTitle>Latest articles</SectionTitle>
       {latest.map(article => (
-        <ArticleReview key={`latest-${article.id}`} {...article} />
+        <Link
+          key={`latest-${article.id}`}
+          route={ARTICLE}
+          params={{ lang, slug: article.slug }}
+          passHref
+        >
+          <ArticleReview {...article} />
+        </Link>
       ))}
       <SectionTitle>Featured articles</SectionTitle>
       <ArticleReviewWrapper>
         {selected.map(article => (
-          <ArticleReview key={`selected-${article.id}`} {...article} />
+          <Link
+            key={`selected-${article.id}`}
+            route={ARTICLE}
+            params={{ lang, slug: article.slug }}
+            passHref
+          >
+            <ArticleReview {...article} />
+          </Link>
         ))}
       </ArticleReviewWrapper>
     </Grid>
@@ -41,6 +61,7 @@ const HomeView = ({ featured, latest, selected }) => (
 );
 
 HomeView.propTypes = {
+  lang: PropTypes.string.isRequired,
   featured: PropTypes.object.isRequired,
   latest: PropTypes.array.isRequired,
   selected: PropTypes.array.isRequired
