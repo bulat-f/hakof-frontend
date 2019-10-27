@@ -1,0 +1,13 @@
+{
+  "name": "@hakof/utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "import:dictionaries": "node import_dictionaries.js"
+  },
+  "dependencies": {
+    "csv-parse": "^4.6.5",
+    "lodash": "^4.17.15"
+  }
+}

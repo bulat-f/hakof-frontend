@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Header } from "@hakof/common";
+import { Header, Grid } from "@hakof/common";
 
 import { Logo } from "../components/Logo";
 import { LanguageSwitcher } from "../components/LanguageSwitcher";
@@ -12,7 +12,7 @@ const MainLayout = ({ children }) => (
         <LanguageSwitcher />
       </Fragment>
     </Header>
-    {children}
+    <Grid>{children}</Grid>
   </Fragment>
 );
 

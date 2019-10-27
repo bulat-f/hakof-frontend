@@ -3,6 +3,7 @@ import { compose, setStatic } from "recompose";
 import { getArticles } from "@hakof/api";
 
 import { withLang } from "../../enhancers/withLang";
+import { withTranslator } from '../../enhancers/withTranslator';
 
 import { HomeView } from "./HomeView";
 
@@ -15,5 +16,6 @@ const getInitialProps = async ({ query }) => {
 
 export const HomeContainer = compose(
   setStatic("getInitialProps", getInitialProps),
-  withLang
+  withLang,
+  withTranslator
 )(HomeView);
