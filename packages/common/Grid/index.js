@@ -52,6 +52,7 @@ export const Row = styled.div`
 `;
 
 export const Col = styled.div`
+  box-sizing: border-box;
   position: relative;
   float: left;
   min-height: 1px;

@@ -6,6 +6,9 @@ import {
   ArticleReview,
   FeaturedArticleReview,
   ArticleReviewWrapper,
+  Row,
+  Col,
+  Card,
   H2
 } from "@hakof/common";
 
@@ -34,17 +37,6 @@ const HomeView = ({ lang, featured, latest, selected, translator: t }) => (
     <Link route={ARTICLE} params={{ lang, slug: featured.slug }} passHref>
       <FeaturedArticleReview {...featured} />
     </Link>
-    <SectionTitle>{t(DICTIONARY_KEYS.LATEST_ARTICLES)}</SectionTitle>
-    {latest.map(article => (
-      <Link
-        key={`latest-${article.id}`}
-        route={ARTICLE}
-        params={{ lang, slug: article.slug }}
-        passHref
-      >
-        <ArticleReview {...article} />
-      </Link>
-    ))}
     <SectionTitle>{t(DICTIONARY_KEYS.POPULAR_ARTICLES)}</SectionTitle>
     <ArticleReviewWrapper>
       {selected.map(article => (
@@ -58,6 +50,24 @@ const HomeView = ({ lang, featured, latest, selected, translator: t }) => (
         </Link>
       ))}
     </ArticleReviewWrapper>
+    <Row>
+      <Col md={8}>
+        <SectionTitle>{t(DICTIONARY_KEYS.LATEST_ARTICLES)}</SectionTitle>
+        {latest.map(article => (
+          <Link
+            key={`latest-${article.id}`}
+            route={ARTICLE}
+            params={{ lang, slug: article.slug }}
+            passHref
+          >
+            <ArticleReview {...article} />
+          </Link>
+        ))}
+      </Col>
+      <Col md={4}>
+        <H2>Popular comment 1</H2>
+      </Col>
+    </Row>
   </MainLayout>
 );
 
