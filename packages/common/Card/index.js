@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { getMeasureUnit } from "../helpers";
 
 export const Card = styled.div`
   position: relative;
   margin: 1rem 0;
   background: #fff;
-  border-radius: 2px;
+  border-radius: ${({ theme: { borderRadius } }) =>
+    getMeasureUnit(borderRadius)};
   border: 1px #ccc solid;
 `;
 

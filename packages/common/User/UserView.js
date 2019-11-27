@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { P } from "../Typography";
 
@@ -21,20 +21,39 @@ const Avatar = styled.img`
   width: 2.5rem;
 `;
 
-const UserView = ({ avatar, name }) => (
+const NameInput = styled.input`
+  border: none;
+  outline: none;
+  font-family: ${({ theme: { basicFont } }) => basicFont};
+  font-weight: bold;
+  font-size: 1rem;
+`;
+
+const UserView = ({ avatar, name, editable, onChange }) => (
   <UserWrapper>
-    <AvatarWrapper>{avatar && <Avatar src={avtar} />}</AvatarWrapper>
-    <P fontWeight="bold">{name}</P>
+    <AvatarWrapper>{avatar && <Avatar src={avatar} />}</AvatarWrapper>
+    {editable ? (
+      <NameInput
+        placeholder="Enter you name"
+        value={name}
+        onChange={onChange}
+      />
+    ) : (
+      <P fontWeight="bold">{name}</P>
+    )}
   </UserWrapper>
 );
 
 UserView.propTypes = {
   avatar: PropTypes.string,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string,
+  editable: PropTypes.bool
 };
 
 UserView.defaultProps = {
-  avator: null
+  avatar: null,
+  name: "",
+  editable: false
 };
 
 export { UserView };

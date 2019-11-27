@@ -23,5 +23,7 @@ export const theme = {
     columns: 12,
     gutterWidth: 30
   },
+  borderRadius: 2,
+  basicFont: '"Open Sans", sans-serif',
   containerMaxWidth: 1140
 };
