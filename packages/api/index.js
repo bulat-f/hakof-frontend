@@ -83,3 +83,14 @@ export const getArticle = (slug, lang = "ru") => {
   Весеннее настроение испортила массовая гибель озимых на полях. А уборочная страда, с одной стороны, порадовала хорошим урожаем зерна, картофеля и других овощей, а также сахарной свеклы. А с другой, это тот случай, когда «больше- не лучше».`
   };
 };
+
+export const postComment = (slug, comment) => {
+  const commentTemplate = {
+    id: "f0fda58630310a6dd91a7d8f0a4cedb3",
+    likes: { count: 0 },
+    dislikes: { count: 0 },
+    replies: []
+  };
+
+  return Promise.resolve({ ...commentTemplate, ...comment });
+};

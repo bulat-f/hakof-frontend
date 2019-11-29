@@ -24,8 +24,15 @@ export const CommentInputContainer = compose(
     },
     handleChangeName: ({ setUserName }) => ({ target }) =>
       setUserName(target.value),
-    handleSubmit: ({ setComment, setSubmitting }) => () => {
+    handleSubmit: ({
+      setComment,
+      setSubmitting,
+      submitComment,
+      comment,
+      user
+    }) => () => {
       setSubmitting(true);
+      submitComment({ comment, author: user });
       setTimeout(() => {
         setSubmitting(false);
         setComment("");

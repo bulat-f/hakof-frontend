@@ -1,22 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
-import { Article, Card, CardInner, H2, CommentInput, Comment } from "@hakof/common";
+import {
+  Article,
+  Card,
+  CardInner,
+  H2,
+  CommentInput,
+  Comment
+} from "@hakof/common";
 
 import { MainLayout } from "../../layouts/MainLayout";
 
-const ArticleView = ({ title, comments, commentsCount, ...restProps }) => (
+const ArticleView = ({
+  article: { title, comments, ...restArticleProps },
+  commentsCount,
+  handleSubmitComment,
+}) => (
   <MainLayout>
     <Head>
       <title>{title}</title>
     </Head>
 
-    <Article title={title} {...restProps} />
+    <Article title={title} {...restArticleProps} />
 
     <Card>
       <CardInner>
         <H2>{commentsCount} comments</H2>
-        <CommentInput />
+        <CommentInput submitComment={handleSubmitComment} />
         {comments.map(comment => (
           <Comment key={`comment-${comment.id}`} {...comment} />
         ))}

@@ -7,8 +7,6 @@ export const withTranslator = compose(
   withLang,
   withHandlers({
     translator: ({ lang }) => key => {
-      console.log(lang, key, DICTIONARIES[lang][key]);
-      
       return DICTIONARIES[lang][key];
     }
   })
