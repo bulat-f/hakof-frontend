@@ -7,7 +7,10 @@
     "import:dictionaries": "node import_dictionaries.js"
   },
   "dependencies": {
-    "csv-parse": "^4.6.5",
+    "esm": "^3.2.25",
     "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "google-spreadsheet": "^2.0.8"
   }
 }

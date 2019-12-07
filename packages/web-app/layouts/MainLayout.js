@@ -10,6 +10,7 @@ const MainLayout = ({ children }) => (
     <Header logo={Logo}>
       <Fragment>
         <LanguageSwitcher />
+        <span>Login</span>
       </Fragment>
     </Header>
     <Grid>{children}</Grid>
