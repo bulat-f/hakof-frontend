@@ -10,7 +10,7 @@ class Article extends React.PureComponent {
     return (
       <Styles.Wrapper>
         <Cover cover={cover}>
-          <H1>{title}</H1>
+          <H1 color="invertedText">{title}</H1>
         </Cover>
         <Styles.Content>
           <P italic={true}>{description}</P>

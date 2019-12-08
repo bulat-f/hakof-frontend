@@ -10,8 +10,8 @@ const FeaturedArticleReview = ({ href, title, description, cover }) => (
     <Styles.Inner>
       <Header />
       <Styles.Content>
-        <H1>{title}</H1>
-        <P>{description}</P>
+        <H1 color="invertedText">{title}</H1>
+        <P color="invertedText">{description}</P>
       </Styles.Content>
     </Styles.Inner>
   </Styles.Wrapper>

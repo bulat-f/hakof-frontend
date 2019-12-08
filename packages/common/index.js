@@ -4,6 +4,7 @@ export { theme as defaultTheme } from "./constants";
 export { default as Article } from "./Article";
 export { default as ArticleReview } from "./ArticleReview";
 export { ArticleReviewWrapper } from "./ArticleReviewWrapper";
+export { Button } from "./Button";
 export { Card, CardInner } from "./Card";
 export { default as FeaturedArticleReview } from "./FeaturedArticleReview";
 export { default as Footer } from "./Footer";
