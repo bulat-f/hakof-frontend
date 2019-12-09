@@ -4,21 +4,19 @@ import styled from "styled-components";
 import { H2 } from "@hakof/common";
 
 import { Link } from "../../routes";
+import { HOME } from "../../constants/pages";
 
 const Capriola = styled(H2)`
   font-family: "Capriola", sans-serif;
+  text-decoration: none;
 `;
 
-export const LogoView = ({ href }) => (
-  <Link to={href}>
+export const LogoView = ({ lang }) => (
+  <Link route={HOME} params={{ lang }} passHref>
     <Capriola as="a">HAKOF |</Capriola>
   </Link>
 );
 
 LogoView.propTypes = {
-  href: PropTypes.string
-};
-
-LogoView.defaultProps = {
-  href: "/"
+  lang: PropTypes.string
 };

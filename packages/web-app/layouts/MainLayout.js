@@ -6,6 +6,13 @@ import { Header, Grid, Button } from "@hakof/common";
 import { Logo } from "../components/Logo";
 import { LanguageSwitcher } from "../components/LanguageSwitcher";
 
+import { Link } from "../routes";
+import { LOGIN } from "../constants/pages";
+
+import { withTranslator } from "../enhancers/withTranslator";
+
+import * as DICTIONARY_KEYS from "../dictionaries/keys";
+
 const LeftSideContainer = styled.div`
   display: flex;
   align-items: center;
@@ -15,22 +22,27 @@ const LeftSideContainer = styled.div`
   }
 `;
 
-const MainLayout = ({ children }) => (
+const MainLayoutView = ({ children, lang, translator: t }) => (
   <Fragment>
     <Header logo={Logo}>
       <LeftSideContainer>
         <LanguageSwitcher />
-        <Button colorScheme="info" size="small" mode="solid">
-          Login
-        </Button>
+        <Link route={LOGIN} params={{ lang }} passHref>
+          <Button as="a" colorScheme="info" size="small" mode="solid">
+            {t(DICTIONARY_KEYS.HEADER_SIGN_IN)}
+          </Button>
+        </Link>
       </LeftSideContainer>
     </Header>
     <Grid>{children}</Grid>
   </Fragment>
 );
 
-MainLayout.propTypes = {
-  children: PropTypes.node.isRequired
+MainLayoutView.propTypes = {
+  children: PropTypes.node.isRequired,
+  translator: PropTypes.func.isRequired
 };
 
-export { MainLayout };
+const MainLayoutContainer = withTranslator(MainLayoutView);
+
+export { MainLayoutContainer as MainLayout };

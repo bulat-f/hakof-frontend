@@ -2,19 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { darken } from "polished";
-import { getMeasureUnit, getColor } from "../helpers";
-
-const getSize = ({ theme, size }, prop) =>
-  getMeasureUnit(theme.button[size][prop]);
-
-const getButtonColor = ({ theme, colorScheme, mode }, prop) => {
-  const schemeColor = theme.button[mode][prop];
-  const colorName = theme.button[colorScheme][schemeColor] || schemeColor;
-  return getColor(theme, colorName);
-};
+import { getSize, getButtonColor } from "../helpers";
 
 const Button = styled.button`
   text-align: center;
+  text-decoration: none;
   cursor: pointer;
 
   font-family: ${({ theme }) => theme.basicFont};

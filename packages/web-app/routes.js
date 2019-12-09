@@ -7,4 +7,6 @@ module.exports = routes()
   .add("/", "home")
   .add(PAGES.HOME, `/${languagePattern}`, "home")
 
-  .add(PAGES.ARTICLE, `/${languagePattern}/article/:slug`, "article");
+  .add(PAGES.ARTICLE, `/${languagePattern}/article/:slug`, "article")
+  
+  .add(PAGES.LOGIN, `/${languagePattern}/login`, "login");
