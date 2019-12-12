@@ -42,28 +42,48 @@ export const InputWrapper = styled.div`
       : css``}
 `;
 
-const InputView = ({ size, direction, label, ...restProps }) => (
-  <InputWrapper direction={direction}>
-    {label && (
-      <Label size={size} direction={direction}>
-        {label}
-      </Label>
-    )}
-    <Input size={size} direction={direction} {...restProps} />
-  </InputWrapper>
-);
+const InputView = ({
+  size,
+  direction,
+  label,
+  error,
+  touched,
+  ...restProps
+}) => {
+  const hasError = touched && Boolean(error);
+  return (
+    <InputWrapper direction={direction}>
+      {label && (
+        <Label size={size} direction={direction} hasError={hasError}>
+          {label}
+        </Label>
+      )}
+      <Input
+        size={size}
+        direction={direction}
+        hasError={hasError}
+        {...restProps}
+      />
+    </InputWrapper>
+  );
+};
 
 InputView.propTypes = {
   size: PropTypes.oneOf(["large", "medium", "small"]),
   direction: PropTypes.oneOf(["column", "row"]),
   label: PropTypes.string,
-  value: PropTypes.string.isRequired
+  error: PropTypes.string,
+  touched: PropTypes.bool,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 InputView.defaultProps = {
   size: "medium",
   direction: "column",
-  label: ""
+  label: "",
+  error: "",
+  touched: false
 };
 
 export { InputView };

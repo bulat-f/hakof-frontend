@@ -7,8 +7,14 @@ import {
 } from "./article/reducer";
 import { saga as articleSaga } from "./article/saga";
 
+import {
+  REDUCER_NAME as USER_REDUCER_NAME,
+  reducer as userReducer
+} from "./user/reducer";
+
 export const rootReducer = combineReducers({
-  [ARTICLE_REDUCER_NAME]: articleReducer
+  [ARTICLE_REDUCER_NAME]: articleReducer,
+  [USER_REDUCER_NAME]: userReducer
 });
 
 function* rootSaga() {

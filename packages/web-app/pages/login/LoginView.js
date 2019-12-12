@@ -3,17 +3,13 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Head from "next/head";
 import {
-  Row,
-  Col,
   Card,
   CardHeader,
   CardInner,
   H2,
-  Input,
-  Button
 } from "@hakof/common";
 
-// import { Link } from "../../routes";
+import { LoginForm } from './LoginForm'
 
 import { MainLayout } from "../../layouts/MainLayout";
 
@@ -44,21 +40,7 @@ const LoginView = ({ translator: t }) => (
           <H2>{t(DICTIONARY_KEYS.LOGIN_PAGE_TITLE)}</H2>
         </CardHeader>
         <CardInner>
-          <Row>
-            <Col md={12}>
-              <Input label={t(DICTIONARY_KEYS.FIELD_EMAIL)} />
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <Input label={t(DICTIONARY_KEYS.FIELD_PASSWORD)} />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Button>{t(DICTIONARY_KEYS.LOGIN_FORM_SUBMIT)}</Button>
-            </Col>
-          </Row>
+          <LoginForm />
         </CardInner>
       </LoginCard>
     </Wrapper>
@@ -66,10 +48,6 @@ const LoginView = ({ translator: t }) => (
 );
 
 LoginView.propTypes = {
-  lang: PropTypes.string.isRequired,
-  featured: PropTypes.object.isRequired,
-  latest: PropTypes.array.isRequired,
-  selected: PropTypes.array.isRequired,
   translator: PropTypes.func.isRequired
 };
 
