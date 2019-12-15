@@ -30,4 +30,7 @@ export default {
 ]: 'Войти',
   [KEYS.REGISTER_FORM_SUMIT
 ]: 'Зарегистрироваться',
+  [KEYS.MENU_ITEM_SETTINGS]: 'Настройки',
+  [KEYS.MENU_ITEM_BOOKMARKS]: 'Закладки',
+  [KEYS.MENU_ITEM_SIGN_OUT]: 'Выйти',
 };

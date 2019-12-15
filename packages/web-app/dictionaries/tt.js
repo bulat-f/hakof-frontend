@@ -30,4 +30,7 @@ export default {
 ]: 'Керергэ',
   [KEYS.REGISTER_FORM_SUMIT
 ]: 'Теркэлергэ',
+  [KEYS.MENU_ITEM_SETTINGS]: 'Койлэулэр',
+  [KEYS.MENU_ITEM_BOOKMARKS]: 'Китап кыстыргычлар :)',
+  [KEYS.MENU_ITEM_SIGN_OUT]: 'Чыгарга',
 };

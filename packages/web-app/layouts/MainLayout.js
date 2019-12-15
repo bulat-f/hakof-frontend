@@ -8,6 +8,7 @@ import { compose, lifecycle } from "recompose";
 
 import { Logo } from "../components/Logo";
 import { LanguageSwitcher } from "../components/LanguageSwitcher";
+import { UserDropdown } from "../components/UserDropdown";
 
 import { Link } from "../routes";
 import { LOGIN } from "../constants/pages";
@@ -16,11 +17,7 @@ import { withTranslator } from "../enhancers/withTranslator";
 
 import * as DICTIONARY_KEYS from "../dictionaries/keys";
 
-import {
-  getCurrentUser,
-  initCurrentUser,
-  removeCurrentUser
-} from "../modules/user";
+import { getCurrentUser, initCurrentUser } from "../modules/user";
 
 const LeftSideContainer = styled.div`
   display: flex;
@@ -43,9 +40,7 @@ const MainLayoutView = ({
       <LeftSideContainer>
         <LanguageSwitcher />
         {currentUser ? (
-          <P onClick={logout}>
-            {currentUser.first_name} {currentUser.last_name[0]}.
-          </P>
+          <UserDropdown />
         ) : (
           <Link route={LOGIN} params={{ lang }} passHref>
             <Button as="a" colorScheme="info" size="small" mode="solid">
@@ -71,7 +66,7 @@ MainLayoutView.defaultProps = {
 };
 
 const mapStateToProps = state => ({ currentUser: getCurrentUser(state) });
-const mapDispatchToProps = { initCurrentUser, logout: removeCurrentUser };
+const mapDispatchToProps = { initCurrentUser };
 
 const MainLayoutContainer = compose(
   withTranslator,

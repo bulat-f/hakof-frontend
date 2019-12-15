@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "import:dictionaries": "node import_dictionaries.js"
+    "import:dictionaries": "node -r esm import_dictionaries.js"
   },
   "dependencies": {
     "esm": "^3.2.25",
