@@ -9,4 +9,5 @@ module.exports = routes()
 
   .add(PAGES.ARTICLE, `/${languagePattern}/article/:slug`, "article")
   
-  .add(PAGES.LOGIN, `/${languagePattern}/login`, "login");
+  .add(PAGES.LOGIN, `/${languagePattern}/login`, "login")
+  .add(PAGES.REGISTER, `/${languagePattern}/register`, "register");

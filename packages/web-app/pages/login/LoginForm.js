@@ -1,17 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { connect } from "react-redux";
 import { compose } from "recompose";
 
-import { Row, Col, Input, Button } from "@hakof/common";
+import { Row, Col, Input, Button, P } from "@hakof/common";
 import { login } from "@hakof/api";
 
 import { setCurrentUser } from "../../modules/user";
 
-import { Router } from "../../routes";
-import { HOME } from "../../constants/pages";
+import { Router, Link } from "../../routes";
+import { HOME, REGISTER } from "../../constants/pages";
 
 import { withTranslator } from "../../enhancers/withTranslator";
 import * as DICTIONARY_KEYS from "../../dictionaries/keys";
@@ -25,6 +26,17 @@ const validationSchema = Yup.object({
     .min(6)
     .required()
 });
+
+const ButtonWrapper = styled(Col)`
+  display: flex;
+  align-items: center;
+
+  > * {
+    margin-right: 0.5rem;
+  }
+`;
+
+const RegisterLink = styled(P).attrs({ as: "a" })``;
 
 const LoginFormView = ({ translator: t, lang, setCurrentUser }) => {
   const { values, errors, touched, handleChange, handleSubmit } = useFormik({
@@ -71,9 +83,15 @@ const LoginFormView = ({ translator: t, lang, setCurrentUser }) => {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <ButtonWrapper>
           <Button type="submit">{t(DICTIONARY_KEYS.LOGIN_FORM_SUBMIT)}</Button>
-        </Col>
+          <P>{t(DICTIONARY_KEYS.LOGIN_FORM_OR)}</P>
+          <Link route={REGISTER} params={{ lang }} passHref>
+            <RegisterLink>
+              {t(DICTIONARY_KEYS.LOGIN_FORM_REGISTER_LINK)}
+            </RegisterLink>
+          </Link>
+        </ButtonWrapper>
       </Row>
     </form>
   );
