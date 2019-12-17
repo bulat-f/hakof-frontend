@@ -1,3 +1,4 @@
+import { alert } from "./alert";
 import { button } from "./button";
 import { input, label } from "./input";
 import * as COLORS from "./colors";
@@ -22,6 +23,7 @@ export const theme = {
   basicFont: '"Open Sans", sans-serif',
   containerMaxWidth: 1140,
 
+  alert,
   button,
   input,
   label

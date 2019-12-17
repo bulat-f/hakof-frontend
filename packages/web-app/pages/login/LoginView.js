@@ -2,14 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Head from "next/head";
-import {
-  Card,
-  CardHeader,
-  CardInner,
-  H2,
-} from "@hakof/common";
+import { Card, CardHeader, CardInner, H2 } from "@hakof/common";
 
-import { LoginForm } from './LoginForm'
+import { LoginForm } from "../../components/LoginForm";
 
 import { MainLayout } from "../../layouts/MainLayout";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
-import { getSize, getButtonColor } from "../helpers";
+import { getComponentSize, getInputColor } from "../helpers";
 
 export const Input = styled.input`
   display: flex;
@@ -9,24 +9,32 @@ export const Input = styled.input`
   align-items: center;
 
   font-family: ${({ theme }) => theme.basicFont};
-  font-size: ${props => getSize(props, "fontSize", "input")};
-  color: ${props => getButtonColor(props, "color", "input")};
+  font-size: ${props => getComponentSize(props, "fontSize", "input")};
+  color: ${props => getInputColor(props, "color", "input")};
 
   border-style: solid;
-  border-width: ${props => getSize(props, "borderWidth", "input")};
-  border-color: ${props => getButtonColor(props, "borderColor", "input")};
-  border-radius: ${props => getSize(props, "borderRadius", "input")};
+  border-width: ${props => getComponentSize(props, "borderWidth", "input")};
+  border-color: ${props => getInputColor(props, "borderColor", "input")};
+  border-radius: ${props => getComponentSize(props, "borderRadius", "input")};
 
-  padding: ${props => `0 ${getSize(props, "paddingHorizontal", "input")}`};
-  height: ${props => getSize(props, "height", "input")};
+  padding: ${props =>
+    `0 ${getComponentSize(props, "paddingHorizontal", "input")}`};
+  height: ${props => getComponentSize(props, "height", "input")};
 `;
 
 export const Label = styled.label`
   font-family: ${({ theme }) => theme.basicFont};
-  font-size: ${props => getSize(props, "fontSize", "input")};
+  font-size: ${props => getComponentSize(props, "fontSize", "input")};
   font-weight: bold;
-  color: ${props => getButtonColor(props, "color", "input")};
+  color: ${props => getInputColor(props, "color", "input")};
   margin: 0 8px 4px 0;
+`;
+
+export const Error = styled.span`
+  font-family: ${({ theme }) => theme.basicFont};
+  font-size: ${props => getComponentSize(props, "fontSize", "input")};
+  color: ${({ theme }) => theme.colors.error};
+  margin: 2px 0 -10px;
 `;
 
 export const InputWrapper = styled.div`
@@ -51,6 +59,7 @@ const InputView = ({
   ...restProps
 }) => {
   const hasError = touched && Boolean(error);
+
   return (
     <InputWrapper direction={direction}>
       {label && (
@@ -64,6 +73,7 @@ const InputView = ({
         hasError={hasError}
         {...restProps}
       />
+      {hasError && <Error size={size}>{error}</Error>}
     </InputWrapper>
   );
 };

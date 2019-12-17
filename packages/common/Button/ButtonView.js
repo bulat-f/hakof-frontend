@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { darken } from "polished";
-import { getSize, getButtonColor } from "../helpers";
+import { getComponentSize, getComponentColor } from "../helpers";
 
 const Button = styled.button`
   text-align: center;
@@ -10,37 +10,37 @@ const Button = styled.button`
   cursor: pointer;
 
   font-family: ${({ theme }) => theme.basicFont};
-  font-size: ${props => getSize(props, "fontSize")};
-  color: ${props => getButtonColor(props, "color")};
+  font-size: ${props => getComponentSize(props, "fontSize")};
+  color: ${props => getComponentColor(props, "color")};
 
-  min-width: ${props => getSize(props, "minWidth")};
+  min-width: ${props => getComponentSize(props, "minWidth")};
   padding: ${props =>
-    `${getSize(props, "paddingVertical")} ${getSize(
+    `${getComponentSize(props, "paddingVertical")} ${getComponentSize(
       props,
       "paddingHorizontal"
     )}`};
 
   border-style: solid;
-  border-width: ${props => getSize(props, "borderWidth")};
-  border-color: ${props => getButtonColor(props, "borderColor")};
-  border-radius: ${props => getSize(props, "borderRadius")};
+  border-width: ${props => getComponentSize(props, "borderWidth")};
+  border-color: ${props => getComponentColor(props, "borderColor")};
+  border-radius: ${props => getComponentSize(props, "borderRadius")};
 
-  background-color: ${props => getButtonColor(props, "backgroundColor")};
+  background-color: ${props => getComponentColor(props, "backgroundColor")};
 
   &:hover {
-    color: ${props => darken(0.05, getButtonColor(props, "color"))};
+    color: ${props => darken(0.05, getComponentColor(props, "color"))};
     border-color: ${props =>
-      darken(0.05, getButtonColor(props, "borderColor"))};
+      darken(0.05, getComponentColor(props, "borderColor"))};
     background-color: ${props =>
-      darken(0.05, getButtonColor(props, "backgroundColor"))};
+      darken(0.05, getComponentColor(props, "backgroundColor"))};
   }
 
   &:active,
   &:focus {
-    color: ${props => darken(0.1, getButtonColor(props, "color"))};
-    border-color: ${props => darken(0.1, getButtonColor(props, "borderColor"))};
+    color: ${props => darken(0.1, getComponentColor(props, "color"))};
+    border-color: ${props => darken(0.1, getComponentColor(props, "borderColor"))};
     background-color: ${props =>
-      darken(0.1, getButtonColor(props, "backgroundColor"))};
+      darken(0.1, getComponentColor(props, "backgroundColor"))};
   }
 `;
 
