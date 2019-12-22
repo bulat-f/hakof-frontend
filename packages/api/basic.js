@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch';
 import { API_BASE_URL } from "./config.json";
 
 const getUrl = path => `${API_BASE_URL}/${path}`;

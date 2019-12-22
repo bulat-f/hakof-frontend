@@ -6,15 +6,17 @@ import * as Styles from "./styles";
 
 class Article extends React.PureComponent {
   render() {
-    const { title, description, cover, body } = this.props;
+    const { title, cover, body } = this.props;
+    const bodyParts = body.split("\n").filter(part => Boolean(part));
     return (
       <Styles.Wrapper>
         <Cover cover={cover}>
           <H1 color="invertedText">{title}</H1>
         </Cover>
         <Styles.Content>
-          <P italic={true}>{description}</P>
-          <P>{body}</P>
+          {bodyParts.map((paragraph, index) => (
+            <P key={`paragraph-${index}`}>{paragraph}</P>
+          ))}
         </Styles.Content>
       </Styles.Wrapper>
     );
@@ -23,7 +25,6 @@ class Article extends React.PureComponent {
 
 Article.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
   cover: PropTypes.string,
   body: PropTypes.string.isRequired
 };

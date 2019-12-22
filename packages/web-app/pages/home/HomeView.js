@@ -51,7 +51,7 @@ const HomeView = ({ lang, featured, latest, selected, translator: t }) => (
       ))}
     </ArticleReviewWrapper>
     <Row>
-      <Col md={8}>
+      <Col>
         <SectionTitle>{t(DICTIONARY_KEYS.LATEST_ARTICLES)}</SectionTitle>
         {latest.map(article => (
           <Link
@@ -63,9 +63,6 @@ const HomeView = ({ lang, featured, latest, selected, translator: t }) => (
             <ArticleReview {...article} />
           </Link>
         ))}
-      </Col>
-      <Col md={4}>
-        <H2>Popular comment 1</H2>
       </Col>
     </Row>
   </MainLayout>
