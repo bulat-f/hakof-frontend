@@ -3,9 +3,9 @@ import { compose } from "recompose";
 import { withLang } from "../../enhancers/withLang";
 import { withTranslator } from '../../enhancers/withTranslator';
 
-import { LoginView } from "./LoginView";
+import LoginView from "./LoginView";
 
-export const LoginContainer = compose(
+export default compose(
   withLang,
   withTranslator
 )(LoginView);

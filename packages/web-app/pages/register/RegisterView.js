@@ -46,4 +46,4 @@ RegisterView.propTypes = {
   translator: PropTypes.func.isRequired
 };
 
-export { RegisterView };
+export default RegisterView;

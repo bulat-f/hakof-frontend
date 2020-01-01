@@ -76,4 +76,4 @@ HomeView.propTypes = {
   translator: PropTypes.func.isRequired
 };
 
-export { HomeView };
+export default HomeView;

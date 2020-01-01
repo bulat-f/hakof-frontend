@@ -5,7 +5,7 @@ import { getArticles } from "@hakof/api";
 import { withLang } from "../../enhancers/withLang";
 import { withTranslator } from '../../enhancers/withTranslator';
 
-import { HomeView } from "./HomeView";
+import HomeView from "./HomeView";
 
 import { RU } from "../../constants/languages";
 
@@ -14,7 +14,7 @@ const getInitialProps = async ({ query }) => {
   return { ...articles };
 };
 
-export const HomeContainer = compose(
+export default compose(
   setStatic("getInitialProps", getInitialProps),
   withLang,
   withTranslator

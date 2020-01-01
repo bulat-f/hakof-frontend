@@ -1,7 +1,7 @@
 import { compose, setStatic, withProps, withHandlers } from "recompose";
 import { connect } from "react-redux";
 
-import { ArticleView } from "./ArticleView";
+import ArticleView from "./ArticleView";
 
 import { fetchArticle, submitComment, getArticle } from "../../modules/article";
 
@@ -27,7 +27,7 @@ const mapDispatchToProps = {
   submitComment
 };
 
-export const ArticleContainer = compose(
+export default compose(
   setStatic("getInitialProps", getInitialProps),
   connect(mapStateToProps, mapDispatchToProps),
   withProps(({ article }) => ({

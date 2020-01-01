@@ -46,4 +46,4 @@ LoginView.propTypes = {
   translator: PropTypes.func.isRequired
 };
 
-export { LoginView };
+export default LoginView;

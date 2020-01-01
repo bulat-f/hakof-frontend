@@ -42,4 +42,4 @@ ArticleView.propTypes = {
   commentsCount: PropTypes.number.isRequired
 };
 
-export { ArticleView };
+export default ArticleView;
