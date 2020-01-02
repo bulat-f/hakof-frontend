@@ -15,7 +15,7 @@ import { MainLayout } from "../../layouts/MainLayout";
 const ArticleView = ({
   article: { title, comments, ...restArticleProps },
   commentsCount,
-  handleSubmitComment,
+  handleSubmitComment
 }) => (
   <MainLayout>
     <Head>
@@ -24,15 +24,17 @@ const ArticleView = ({
 
     <Article title={title} {...restArticleProps} />
 
-    <Card>
-      <CardInner>
-        <H2>{commentsCount} comments</H2>
-        <CommentInput submitComment={handleSubmitComment} />
-        {comments.map(comment => (
-          <Comment key={`comment-${comment.id}`} {...comment} />
-        ))}
-      </CardInner>
-    </Card>
+    {process.env.NODE_ENV !== "production" && (
+      <Card>
+        <CardInner>
+          <H2>{commentsCount} comments</H2>
+          <CommentInput submitComment={handleSubmitComment} />
+          {comments.map(comment => (
+            <Comment key={`comment-${comment.id}`} {...comment} />
+          ))}
+        </CardInner>
+      </Card>
+    )}
   </MainLayout>
 );
 
