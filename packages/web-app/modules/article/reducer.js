@@ -1,9 +1,9 @@
 import * as ACTIONS from "./actions";
 
 export const defaultState = {
-  title: null,
-  description: null,
-  body: null,
+  title: '',
+  description: '',
+  body: '',
   comments: []
 };
 
