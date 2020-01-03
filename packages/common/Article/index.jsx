@@ -7,7 +7,7 @@ import * as Styles from "./styles";
 class Article extends React.PureComponent {
   render() {
     const { title, cover, body } = this.props;
-    const bodyParts = body.split("\n").filter(part => Boolean(part));
+    const bodyParts = body && body.split("\n").filter(part => Boolean(part));
     return (
       <Styles.Wrapper>
         <Cover cover={cover}>

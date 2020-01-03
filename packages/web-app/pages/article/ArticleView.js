@@ -13,16 +13,16 @@ import {
 import { MainLayout } from "../../layouts/MainLayout";
 
 const ArticleView = ({
-  article: { title, comments, ...restArticleProps },
+  article: { comments, ...articleProps },
   commentsCount,
   handleSubmitComment
 }) => (
   <MainLayout>
     <Head>
-      <title>{title}</title>
+      <title>{articleProps.title}</title>
     </Head>
 
-    <Article title={title} {...restArticleProps} />
+    <Article {...articleProps} />
 
     {process.env.NODE_ENV !== "production" && (
       <Card>
