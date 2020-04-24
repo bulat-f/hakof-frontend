@@ -29,7 +29,7 @@ const NameInput = styled.input`
   font-size: 1rem;
 `;
 
-const UserView = ({ avatar, name, editable, onChange }) => (
+const UserView = ({ avatar, first_name, last_name, editable, onChange }) => (
   <UserWrapper>
     <AvatarWrapper>{avatar && <Avatar src={avatar} />}</AvatarWrapper>
     {editable ? (
@@ -39,7 +39,7 @@ const UserView = ({ avatar, name, editable, onChange }) => (
         onChange={onChange}
       />
     ) : (
-      <P fontWeight="bold">{name}</P>
+      <P fontWeight="bold">{[first_name, last_name].join(" ")}</P>
     )}
   </UserWrapper>
 );
@@ -47,13 +47,13 @@ const UserView = ({ avatar, name, editable, onChange }) => (
 UserView.propTypes = {
   avatar: PropTypes.string,
   name: PropTypes.string,
-  editable: PropTypes.bool
+  editable: PropTypes.bool,
 };
 
 UserView.defaultProps = {
   avatar: null,
   name: "",
-  editable: false
+  editable: false,
 };
 
 export { UserView };

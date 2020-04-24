@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { darken } from "polished";
 import { P } from "../Typography";
-import { Rating } from "../Rating";
+// import { Rating } from "../Rating";
 import { User } from "../User";
 
 import { Comment } from ".";
@@ -31,13 +31,13 @@ const RepliesWeapper = styled.div`
   margin-left: 2rem;
 `;
 
-const CommentView = ({ comment, author, likes, dislikes, replies }) => (
+const CommentView = ({ text, author, likes, dislikes, replies }) => (
   <Fragment>
     <CommentWrapper>
       <User {...author} />
-      <P>{comment}</P>
+      <P>{text}</P>
       <CommentFooter>
-        <Rating likes={likes} dislikes={dislikes} />
+        {/* <Rating likes={likes} dislikes={dislikes} /> */}
         <ReplyBtn>Reply</ReplyBtn>
       </CommentFooter>
     </CommentWrapper>
@@ -52,7 +52,7 @@ const CommentView = ({ comment, author, likes, dislikes, replies }) => (
 );
 
 CommentView.propTypes = {
-  comment: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   author: PropTypes.object.isRequired,
   likes: PropTypes.shape({
     count: PropTypes.number.isRequired
