@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Header, Grid, Button, P } from "@hakof/common";
+import { Header, Grid, Button } from "@hakof/common";
 
 import { connect } from "react-redux";
 import { compose, lifecycle } from "recompose";
@@ -33,41 +33,41 @@ const MainLayoutView = ({
   currentUser,
   logout,
   lang,
-  translator: t
-}) => (
-  <Fragment>
-    <Header logo={Logo}>
-      <LeftSideContainer>
-        <LanguageSwitcher />
-        {currentUser ? (
-          <UserDropdown />
-        ) : (
-          process.env.NODE_ENV !== "production" && (
+  translator: t,
+}) => {
+  return (
+    <Fragment>
+      <Header logo={Logo}>
+        <LeftSideContainer>
+          <LanguageSwitcher />
+          {currentUser ? (
+            <UserDropdown />
+          ) : (
             <Link route={LOGIN} params={{ lang }} passHref>
               <Button as="a" colorScheme="info" size="small" mode="solid">
                 {t(DICTIONARY_KEYS.HEADER_SIGN_IN)}
               </Button>
             </Link>
-          )
-        )}
-      </LeftSideContainer>
-    </Header>
-    <Grid>{children}</Grid>
-  </Fragment>
-);
+          )}
+        </LeftSideContainer>
+      </Header>
+      <Grid>{children}</Grid>
+    </Fragment>
+  );
+};
 
 MainLayoutView.propTypes = {
   children: PropTypes.node.isRequired,
   currentUser: PropTypes.object,
   lang: PropTypes.string.isRequired,
-  translator: PropTypes.func.isRequired
+  translator: PropTypes.func.isRequired,
 };
 
 MainLayoutView.defaultProps = {
-  currentUser: null
+  currentUser: null,
 };
 
-const mapStateToProps = state => ({ currentUser: getCurrentUser(state) });
+const mapStateToProps = (state) => ({ currentUser: getCurrentUser(state) });
 const mapDispatchToProps = { initCurrentUser };
 
 const MainLayoutContainer = compose(
@@ -76,7 +76,7 @@ const MainLayoutContainer = compose(
   lifecycle({
     componentDidMount() {
       this.props.initCurrentUser();
-    }
+    },
   })
 )(MainLayoutView);
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { getColor } from "../helpers";
+import { getColor } from "../../helpers";
 
 export const H1 = styled.h1`
   font-family: "Source Sans Pro", sans-serif;

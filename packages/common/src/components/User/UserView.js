@@ -29,18 +29,10 @@ const NameInput = styled.input`
   font-size: 1rem;
 `;
 
-const UserView = ({ avatar, first_name, last_name, editable, onChange }) => (
+const UserView = ({ avatar, first_name, last_name, onChange }) => (
   <UserWrapper>
     <AvatarWrapper>{avatar && <Avatar src={avatar} />}</AvatarWrapper>
-    {editable ? (
-      <NameInput
-        placeholder="Enter you name"
-        value={name}
-        onChange={onChange}
-      />
-    ) : (
-      <P fontWeight="bold">{[first_name, last_name].join(" ")}</P>
-    )}
+    <P fontWeight="bold">{[first_name, last_name].join(" ")}</P>
   </UserWrapper>
 );
 
