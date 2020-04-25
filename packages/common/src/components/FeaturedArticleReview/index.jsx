@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { H1, P } from "../Typography";
+import { H1, P } from "@hakof/ui";
 import Header from "./Header";
 import * as Styles from "./styles";
 

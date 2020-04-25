@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { getMeasureUnit } from "../../helpers";
+import { getMeasureUnit } from "@hakof/theme";
 
 const Wrapper = styled.div`
   display: ${({ shown }) => !shown && "none"};

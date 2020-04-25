@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 
-import { P } from "../Typography";
+import { P } from "@hakof/ui";
 
 const UserWrapper = styled.div`
   display: flex;

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { Row, Col, Input, Button, P, Alert } from "@hakof/common";
+import { Row, Col, Input, Button, P, Alert } from "@hakof/ui";
 
 import { Link } from "../../routes";
 import { REGISTER } from "../../constants/pages";

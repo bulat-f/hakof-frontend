@@ -5,7 +5,7 @@ import withRedux from "next-redux-wrapper";
 import withReduxSaga from "next-redux-saga";
 
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { defaultTheme } from "@hakof/common";
+import { defaultTheme } from "@hakof/theme";
 
 import createStore from "../store";
 

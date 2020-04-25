@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { darken } from "polished";
-import { getComponentSize, getComponentColor } from "../../helpers";
+import { getComponentSize, getComponentColor } from "@hakof/theme";
 
 enum Size {
   large = "large",

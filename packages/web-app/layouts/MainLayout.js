@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Header, Grid, Button } from "@hakof/common";
+import { Header } from '@hakof/common'
+import { Grid, Button } from "@hakof/ui";
 
 import { connect } from "react-redux";
 import { compose, lifecycle } from "recompose";

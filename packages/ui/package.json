@@ -1,5 +1,5 @@
 {
-  "name": "@hakof/common",
+  "name": "@hakof/ui",
   "version": "0.2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,8 +14,7 @@
     "react": "^16.10.2",
     "react-svg": "^10.0.22",
     "styled-components": "^4.4.0",
-    "@hakof/theme": "^0.2.0",
-    "@hakof/ui": "^0.2.0"
+    "@hakof/theme": "^0.2.0"
   },
   "devDependencies": {
     "typescript": "^3.8.3"

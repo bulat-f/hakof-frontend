@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardInner } from '../Card';
+import { CardInner } from '@hakof/ui';
 import * as Styles from './styles';
 
 class Cover extends React.PureComponent {

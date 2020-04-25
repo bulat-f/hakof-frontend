@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { darken } from "polished";
-import { P } from "../Typography";
+import { P } from "@hakof/ui";
 // import { Rating } from "../Rating";
 import { User } from "../User";
 
