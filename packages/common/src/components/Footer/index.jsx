@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "../Grid";
+import { Grid } from "@hakof/ui";
 import * as Styles from "./styles";
 
 const Footer = () => (

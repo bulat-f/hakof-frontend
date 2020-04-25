@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { H2 } from "@hakof/common";
+import { H2 } from "@hakof/ui";
 
 import { Link } from "../../routes";
 import { HOME } from "../../constants/pages";

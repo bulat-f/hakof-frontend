@@ -6,10 +6,8 @@ import {
   ArticleReview,
   FeaturedArticleReview,
   ArticleReviewWrapper,
-  Row,
-  Col,
-  H2,
 } from "@hakof/common";
+import { Row, Col, H2 } from "@hakof/ui";
 
 import { Link } from "../../routes";
 

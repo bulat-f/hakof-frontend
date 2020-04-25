@@ -5,7 +5,7 @@ import { darken, lighten } from "polished";
 
 import { User } from "../User";
 
-import { getMeasureUnit } from "../../helpers";
+import { getMeasureUnit } from "@hakof/theme";
 
 const CommentInputWrapper = styled.div`
   border: 1px solid #f0f0f0;

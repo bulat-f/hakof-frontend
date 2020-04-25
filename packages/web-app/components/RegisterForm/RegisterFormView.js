@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { Row, Col, Input, Button, Alert } from "@hakof/common";
+import { Row, Col, Input, Button, Alert } from "@hakof/ui";
 
 import * as DICTIONARY_KEYS from "../../dictionaries/keys";
 

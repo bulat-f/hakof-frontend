@@ -1,5 +1,5 @@
 import * as React from "react";
-import { H2, P } from "../Typography";
+import { H2, P } from "@hakof/ui";
 import Cover from "./Cover";
 import Header from "./Header";
 import * as Styles from "./styles";

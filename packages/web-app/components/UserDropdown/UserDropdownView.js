@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 import { lighten } from "polished";
-import { P, DropdownWrapper, Dropdown } from "@hakof/common";
+import { P, DropdownWrapper, Dropdown } from "@hakof/ui";
 
 import * as DICTIONARY_KEYS from "../../dictionaries/keys";
 

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Head from "next/head";
-import { Card, CardHeader, CardInner, H2 } from "@hakof/common";
+import { Card, CardHeader, CardInner, H2 } from "@hakof/ui";
 
 import { RegisterForm } from "../../components/RegisterForm";
 
