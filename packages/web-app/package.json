@@ -8,8 +8,8 @@
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
-    "@hakof/api": "^0.1.0",
-    "@hakof/common": "^0.1.0",
+    "@hakof/api": "^0.2.0",
+    "@hakof/common": "^0.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "formik": "^2.0.6",

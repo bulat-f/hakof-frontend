@@ -43,12 +43,11 @@ const MainLayoutView = ({
           {currentUser ? (
             <UserDropdown />
           ) : (
-            // <Link route={LOGIN} params={{ lang }} passHref>
-            //   <Button as="a" colorScheme="info" size="small" mode="solid">
-            //     {t(DICTIONARY_KEYS.HEADER_SIGN_IN)}
-            //   </Button>
-            // </Link>
-            null
+            <Link route={LOGIN} params={{ lang }} passHref>
+              <Button as="a" colorScheme="info" size="small" mode="solid">
+                {t(DICTIONARY_KEYS.HEADER_SIGN_IN)}
+              </Button>
+            </Link>
           )}
         </LeftSideContainer>
       </Header>

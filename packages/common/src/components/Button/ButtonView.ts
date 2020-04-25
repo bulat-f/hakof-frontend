@@ -27,7 +27,7 @@ interface IProps {
   mode: Mode;
 }
 
-export const ButtonView = styled.button<IProps>`
+const ButtonView = styled.button<IProps>`
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -73,3 +73,5 @@ ButtonView.defaultProps = {
   colorScheme: ColorScheme.primary,
   mode: Mode.solid,
 };
+
+export { ButtonView };
