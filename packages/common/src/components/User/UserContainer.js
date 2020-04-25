@@ -1,4 +1,4 @@
-import { compose, withStateHandlers } from "recompose";
+import { compose, withStateHandlers } from "components/Comment/node_modules/recompose";
 
 export const UserContainer = compose(
   withStateHandlers(

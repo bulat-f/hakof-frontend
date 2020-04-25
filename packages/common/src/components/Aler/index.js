@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { lighten } from "polished";
-import { getMeasureUnit } from "../helpers";
+import { getMeasureUnit } from "../../helpers";
 
 export const Alert = styled.div`
   border-width: 1px;

@@ -1,4 +1,4 @@
-import { compose, withProps } from "recompose";
+import { compose, withProps } from "components/Comment/node_modules/recompose";
 import { RatingView } from "./RatingView";
 
 export const RatingContainer = compose(

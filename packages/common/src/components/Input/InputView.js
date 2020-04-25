@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
-import { getComponentSize, getInputColor } from "../helpers";
+import { getComponentSize, getInputColor } from "../../helpers";
 
 export const Input = styled.input`
   display: flex;
