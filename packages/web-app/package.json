@@ -10,6 +10,7 @@
   "dependencies": {
     "@hakof/api": "^0.2.0",
     "@hakof/common": "^0.2.0",
+    "@hakof/theme": "^0.2.0",
     "@hakof/ui": "^0.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

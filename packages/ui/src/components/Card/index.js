@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { getMeasureUnit } from "../../helpers";
+import { getMeasureUnit } from "@hakof/theme";
 
 export const Card = styled.div`
   position: relative;
