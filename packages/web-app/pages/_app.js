@@ -32,7 +32,7 @@ class MyApp extends App {
       Component,
       pageProps,
       router: { query },
-      store
+      store,
     } = this.props;
 
     return (

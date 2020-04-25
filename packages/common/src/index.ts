@@ -1,4 +1,4 @@
-export { theme as defaultTheme } from "./components";
+export { theme as defaultTheme } from "./theme";
 
 // TODO: replace defaults with named exports
 export { Alert } from "./components/Aler";

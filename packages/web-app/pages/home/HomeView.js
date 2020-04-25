@@ -8,8 +8,7 @@ import {
   ArticleReviewWrapper,
   Row,
   Col,
-  Card,
-  H2
+  H2,
 } from "@hakof/common";
 
 import { Link } from "../../routes";
@@ -39,7 +38,7 @@ const HomeView = ({ lang, featured, latest, selected, translator: t }) => (
     </Link>
     <SectionTitle>{t(DICTIONARY_KEYS.POPULAR_ARTICLES)}</SectionTitle>
     <ArticleReviewWrapper>
-      {selected.map(article => (
+      {selected.map((article) => (
         <Link
           key={`selected-${article.id}`}
           route={ARTICLE}
@@ -53,7 +52,7 @@ const HomeView = ({ lang, featured, latest, selected, translator: t }) => (
     <Row>
       <Col>
         <SectionTitle>{t(DICTIONARY_KEYS.LATEST_ARTICLES)}</SectionTitle>
-        {latest.map(article => (
+        {latest.map((article) => (
           <Link
             key={`latest-${article.id}`}
             route={ARTICLE}
@@ -73,7 +72,7 @@ HomeView.propTypes = {
   featured: PropTypes.object.isRequired,
   latest: PropTypes.array.isRequired,
   selected: PropTypes.array.isRequired,
-  translator: PropTypes.func.isRequired
+  translator: PropTypes.func.isRequired,
 };
 
 export default HomeView;
