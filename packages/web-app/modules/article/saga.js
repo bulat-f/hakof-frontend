@@ -1,5 +1,5 @@
 import { takeLatest, put, fork } from "redux-saga/effects";
-import { getArticle, postComment } from "@hakof/api";
+import { getArticle } from "@hakof/api";
 
 import * as ACTIONS from "./actions";
 
