@@ -1,2 +1,2 @@
-export { initCurrentUser, setCurrentUser, removeCurrentUser } from "./actions";
+export { initCurrentUser, register, login, logout } from "./actions";
 export { getCurrentUser } from "./selectors";

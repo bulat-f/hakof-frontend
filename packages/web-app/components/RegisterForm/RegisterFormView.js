@@ -19,7 +19,6 @@ const ErrorListItem = styled.li`
 `;
 
 const RegisterFormView = ({
-  globalErrors,
   values,
   errors,
   touched,
@@ -28,19 +27,6 @@ const RegisterFormView = ({
   translator: t
 }) => (
   <form onSubmit={handleSubmit}>
-    {globalErrors.length > 0 && (
-      <Row>
-        <Col>
-          <Alert type="error">
-            <ErrorList>
-              {globalErrors.map((error, index) => (
-                <ErrorListItem key={`error-${index}`}>{error}</ErrorListItem>
-              ))}
-            </ErrorList>
-          </Alert>
-        </Col>
-      </Row>
-    )}
     <Row>
       <Col md={12}>
         <Input

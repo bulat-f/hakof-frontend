@@ -1,2 +1,2 @@
 export { getArticles, getArticle } from "./articles";
-export { createUser, login } from "./users";
+export { register, login } from "./users";

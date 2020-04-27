@@ -1,27 +1,17 @@
-import * as types from "./actionTypes";
+import {
+  INIT_CURRENT_USER,
+  REGISTER_REQUEST,
+  LOGIN_REQUEST,
+  LOGOUT_REQUEST,
+} from "./actionTypes";
 
-const LOCAL_STORAGE_ITEM = "currentUser";
+export const initCurrentUser = () => ({ type: INIT_CURRENT_USER });
 
-export const initCurrentUser = () => {
-  const currentUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEM));
+export const register = (creds) => ({
+  type: REGISTER_REQUEST,
+  payload: creds,
+});
 
-  return {
-    type: types.SET_CURRENT_USER,
-    payload: currentUser || null
-  };
-};
+export const login = (creds) => ({ type: LOGIN_REQUEST, payload: creds });
 
-export const setCurrentUser = payload => {
-  localStorage.setItem(LOCAL_STORAGE_ITEM, JSON.stringify(payload));
-
-  return {
-    type: types.SET_CURRENT_USER,
-    payload
-  };
-};
-
-export const removeCurrentUser = () => {
-  localStorage.removeItem(LOCAL_STORAGE_ITEM);
-
-  return { type: types.REMOVE_CURRENT_USER };
-};
+export const logout = () => ({ type: LOGOUT_REQUEST });
